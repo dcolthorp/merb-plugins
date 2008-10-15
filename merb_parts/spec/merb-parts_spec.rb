@@ -62,6 +62,9 @@ describe "A Merb PartController" do
     controller.body.should match(/part_html_format/m)
   end
   
+  it "should include Merb::GlobalHelpers so that helpers defined there are available to parts" do
+    Merb::PartController.included_modules.should include(Merb::GlobalHelpers)
+  end
 end  
 
 describe "A Merb Part Controller with urls" do

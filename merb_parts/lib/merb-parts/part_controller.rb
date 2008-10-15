@@ -10,6 +10,7 @@ module Merb
   # Cookies, params, and even the request object are shared with the web controller
   class PartController < AbstractController
     include Merb::Mixins::WebController
+    include Merb::GlobalHelpers
 
     attr_reader :params
 
